@@ -1102,3 +1102,226 @@ textarea { resize: vertical; }
     padding-top: 0;
   }
 }
+
+/* Targeted refinements: logo, hero metrics, page backgrounds and larger machine images */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo .logo-mark {
+  width: 42px;
+  height: 52px;
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  background: none;
+  border-radius: 0;
+  transform: none;
+  box-shadow: none;
+  filter: drop-shadow(0 0 14px rgba(95, 165, 27, 0.35));
+}
+
+.logo .logo-mark::before {
+  content: "";
+  position: absolute;
+  inset: 5px 9px;
+  background: linear-gradient(135deg, #5fa51b, #2f6f0d);
+  border-radius: 60% 45% 60% 45%;
+  transform: rotate(35deg);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.16);
+}
+
+.logo .logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 2px 14px 10px 13px;
+  background: #fff;
+  border-radius: 60% 45% 60% 45%;
+  transform: rotate(35deg);
+  opacity: 0.95;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.logo-line-main {
+  color: #fff;
+  font-size: 26px;
+}
+
+.logo-line-sub {
+  margin-top: 4px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.logo-green { color: #5fa51b; }
+.logo-white { color: #fff; }
+
+.hero-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hero-metrics div {
+  min-height: 112px;
+}
+
+.hero-metrics span {
+  line-height: 1.35;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.page-hero.compact.page-hero--catalog {
+  background-image:
+    linear-gradient(90deg, rgba(2, 5, 2, 0.96) 0%, rgba(2, 5, 2, 0.76) 45%, rgba(2, 5, 2, 0.35) 100%),
+    url("/images/page-bg/catalog-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.page-hero.compact.page-hero--about {
+  background-image:
+    linear-gradient(90deg, rgba(2, 5, 2, 0.96) 0%, rgba(2, 5, 2, 0.76) 45%, rgba(2, 5, 2, 0.35) 100%),
+    url("/images/page-bg/about-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.page-hero.compact.page-hero--delivery {
+  background-image:
+    linear-gradient(90deg, rgba(2, 5, 2, 0.96) 0%, rgba(2, 5, 2, 0.76) 45%, rgba(2, 5, 2, 0.35) 100%),
+    url("/images/page-bg/delivery-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.page-hero.compact.page-hero--contacts {
+  background-image:
+    linear-gradient(90deg, rgba(2, 5, 2, 0.96) 0%, rgba(2, 5, 2, 0.76) 45%, rgba(2, 5, 2, 0.35) 100%),
+    url("/images/page-bg/contacts-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.machine-card {
+  min-height: 335px;
+}
+
+.machine-card__image {
+  top: 24px;
+  right: 24px;
+  width: 54%;
+  height: 165px;
+  max-width: none;
+  transform: none;
+}
+
+.machine-card__image img {
+  transform: scale(1.28);
+  filter:
+    drop-shadow(0 18px 28px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 24px rgba(95, 165, 27, 0.28));
+}
+
+.machine-card__content {
+  max-width: 74%;
+  padding-top: 190px;
+}
+
+.machine-card--dump .machine-card__image,
+.machine-card--excavator .machine-card__image,
+.machine-card--tractor .machine-card__image,
+.machine-card--combine .machine-card__image,
+.machine-card--bulldozer .machine-card__image,
+.machine-card--crane .machine-card__image {
+  width: 54%;
+  right: 24px;
+  transform: none;
+}
+
+.machine-card--dump .machine-card__image img { transform: scale(1.35); }
+.machine-card--excavator .machine-card__image img { transform: scale(1.42); }
+.machine-card--tractor .machine-card__image img { transform: scale(1.28); }
+.machine-card--combine .machine-card__image img { transform: scale(1.45); }
+.machine-card--bulldozer .machine-card__image img { transform: scale(1.38); }
+.machine-card--crane .machine-card__image img { transform: scale(1.35); }
+
+@media (max-width: 1020px) {
+  .hero-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .machine-card {
+    min-height: 305px;
+  }
+
+  .machine-card__image {
+    width: 56%;
+    height: 155px;
+    right: 18px;
+  }
+
+  .machine-card__content {
+    max-width: 78%;
+    padding-top: 180px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .machine-card {
+    min-height: auto;
+  }
+
+  .machine-card__image {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 18px;
+    transform: none;
+  }
+
+  .machine-card__image img,
+  .machine-card--dump .machine-card__image img,
+  .machine-card--excavator .machine-card__image img,
+  .machine-card--tractor .machine-card__image img,
+  .machine-card--combine .machine-card__image img,
+  .machine-card--bulldozer .machine-card__image img,
+  .machine-card--crane .machine-card__image img {
+    transform: scale(1.15);
+  }
+
+  .machine-card__content {
+    max-width: 100%;
+    padding-top: 0;
+  }
+}
