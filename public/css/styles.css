@@ -1438,3 +1438,80 @@ textarea { resize: vertical; }
     font-size: 24px;
   }
 }
+
+/* Hero stats final sizing pass */
+.hero {
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 560px);
+}
+
+.hero-metrics {
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+  gap: 14px;
+  max-width: 560px;
+  width: 100%;
+}
+
+.hero-stat {
+  min-width: 0;
+  padding: 24px 22px;
+}
+
+.hero-stat strong,
+.hero-stat span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-stat strong {
+  display: block;
+  color: #fff;
+  font-size: clamp(24px, 1.8vw, 30px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.hero-stat span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-stat--individual strong {
+  font-size: clamp(22px, 1.55vw, 27px);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.hero-stat--address span {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+}
+
+@media (max-width: 1020px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-metrics {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stat strong,
+  .hero-stat--individual strong {
+    white-space: normal;
+  }
+}
