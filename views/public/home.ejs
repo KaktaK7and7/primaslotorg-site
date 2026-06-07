@@ -30,10 +30,10 @@
     </div>
   </div>
   <div class="hero-metrics" aria-label="Преимущества поставки">
-    <div><b>TOR Oils</b><span>дистрибуция</span></div>
-    <div><b>Индивидуальное</b><span>обсуждение заказов</span></div>
-    <div><b>Доставка</b><span>по Приморскому краю</span></div>
-    <div><b>Адрес</b><span>Приморский край, г. Уссурийск, ул. Московская, 12</span></div>
+    <div class="hero-stat"><strong>TOR Oils</strong><span>дистрибуция</span></div>
+    <div class="hero-stat hero-stat--wide-text"><strong>Индивидуальное</strong><span>обсуждение заказов</span></div>
+    <div class="hero-stat"><strong>Доставка</strong><span>по Приморскому краю</span></div>
+    <div class="hero-stat hero-stat--address"><strong>Адрес</strong><span>Приморский край, г. Уссурийск, ул. Московская, 12</span></div>
   </div>
 </section>
 
@@ -51,8 +51,10 @@
       >
         <span class="card-index">0<%= category.id %></span>
         <div class="category-art" aria-hidden="true"></div>
-        <h3><%= category.title %></h3>
-        <p><%= category.description %></p>
+        <div class="category-card__content">
+          <h3><%= category.title %></h3>
+          <p><%= category.description %></p>
+        </div>
       </a>
     <% }) %>
   </div>

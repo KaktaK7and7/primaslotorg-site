@@ -1325,3 +1325,116 @@ textarea { resize: vertical; }
     padding-top: 0;
   }
 }
+
+/* Hero stats text fitting and category card typography refinements */
+.hero-stat {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hero-stat strong {
+  display: block;
+  max-width: 100%;
+  color: #fff;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero-stat span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(12px, 1vw, 15px);
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-stat--wide-text strong {
+  font-size: clamp(20px, 1.8vw, 28px);
+  letter-spacing: -0.04em;
+}
+
+.hero-stat--address span {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.category-card__content {
+  position: relative;
+  z-index: 2;
+  max-width: 68%;
+}
+
+.category-card h3,
+.category-card__title {
+  max-width: 72%;
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(24px, 1.7vw, 32px);
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  text-shadow: 0 0 18px rgba(95, 165, 27, 0.16);
+}
+
+.category-card p,
+.category-card__text {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(16px, 1vw, 18px);
+  line-height: 1.55;
+}
+
+.category-card .card-index,
+.category-card__number,
+.category-card .card-number {
+  font-size: 18px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.08em;
+}
+
+.category-art,
+.category-card__image {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 30%;
+  max-width: 190px;
+  height: 130px;
+}
+
+.category-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .category-art,
+  .category-card__image {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 220px;
+    height: 120px;
+    margin: 0 0 18px auto;
+  }
+
+  .category-card__content {
+    max-width: 100%;
+  }
+
+  .category-card h3,
+  .category-card__title {
+    max-width: 100%;
+    font-size: 24px;
+  }
+}
