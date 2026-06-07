@@ -10,12 +10,12 @@
   };
 
   const machines = [
-    { title: 'Самосвал', image: '/images/machines/dump-truck.png', text: 'Карьерная и строительная техника под постоянной нагрузкой.' },
-    { title: 'Экскаватор', image: '/images/machines/excavator.png', text: 'Гидравлика, поворотные механизмы и дизельные двигатели.' },
-    { title: 'Трактор', image: '/images/machines/tractor.png', text: 'Сельхозтехника для сезонной и круглогодичной эксплуатации.' },
-    { title: 'Комбайн', image: '/images/machines/combine.png', text: 'Смазочные материалы для уборочных кампаний и сервиса.' },
-    { title: 'Бульдозер', image: '/images/machines/bulldozer.png', text: 'Масла для тяжелых дорожных и земляных работ.' },
-    { title: 'Кран', image: '/images/machines/crane.png', text: 'Технические жидкости для подъемной и портовой техники.' }
+    { slug: 'dump', title: 'Самосвал', image: '/images/machines/dump-truck.png', text: 'Карьерная и строительная техника под постоянной нагрузкой.' },
+    { slug: 'excavator', title: 'Экскаватор', image: '/images/machines/excavator.png', text: 'Гидравлика, поворотные механизмы и дизельные двигатели.' },
+    { slug: 'tractor', title: 'Трактор', image: '/images/machines/tractor.png', text: 'Сельхозтехника для сезонной и круглогодичной эксплуатации.' },
+    { slug: 'combine', title: 'Комбайн', image: '/images/machines/combine.png', text: 'Смазочные материалы для уборочных кампаний и сервиса.' },
+    { slug: 'bulldozer', title: 'Бульдозер', image: '/images/machines/bulldozer.png', text: 'Масла для тяжелых дорожных и земляных работ.' },
+    { slug: 'crane', title: 'Кран', image: '/images/machines/crane.png', text: 'Технические жидкости для подъемной и портовой техники.' }
   ];
 %>
 
@@ -67,10 +67,12 @@
   </div>
   <div class="machine-grid">
     <% machines.forEach((machine) => { %>
-      <article class="machine-card" style="--machine-image: url('<%= machine.image %>')">
-        <div class="machine-art" aria-hidden="true"></div>
-        <div class="machine-content">
-          <span>техника</span>
+      <article class="machine-card machine-card--<%= machine.slug %>">
+        <div class="machine-card__image">
+          <img src="<%= machine.image %>" alt="<%= machine.title %>">
+        </div>
+        <div class="machine-card__content">
+          <span>Техника</span>
           <h3><%= machine.title %></h3>
           <p><%= machine.text %></p>
         </div>
