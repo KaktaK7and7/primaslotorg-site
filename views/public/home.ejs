@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Дистрибьютор TOR Oils в Приморском крае</p>
+    <h1>Масла для спецтехники</h1>
+    <p class="lead">Поставка моторных, трансмиссионных, гидравлических масел и охлаждающих жидкостей для спецтехники по Приморскому краю.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/catalog">Смотреть каталог</a>
+      <a class="btn btn-outline" href="<%= site.whatsappUrl %>">Связаться с менеджером</a>
+    </div>
+  </div>
+  <div class="machinery-panel" aria-label="Заглушки изображений спецтехники">
+    <!-- Позже здесь можно заменить CSS-карточки на реальный баннер или фото спецтехники. -->
+    <% ['Самосвал','Экскаватор','Трактор','Комбайн','Бульдозер','Кран'].forEach((item, i) => { %>
+      <div class="machine-card"><span><%= ['▰','◖','▣','▤','▱','⌜'][i] %></span><%= item %></div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow">Каталог</p>
+    <h2>Категории продукции</h2>
+  </div>
+  <div class="category-grid">
+    <% categories.forEach((category) => { %>
+      <a class="category-card" href="/catalog/<%= category.slug %>">
+        <h3><%= category.title %></h3>
+        <p><%= category.description %></p>
+      </a>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section split">
+  <div>
+    <p class="eyebrow">Применение</p>
+    <h2>Для какой техники</h2>
+    <p>Подбираем продукты для строительной, карьерной, дорожной, сельскохозяйственной и портовой техники.</p>
+  </div>
+  <div class="tags">
+    <span>Экскаваторы</span><span>Самосвалы</span><span>Бульдозеры</span><span>Краны</span><span>Тракторы</span><span>Комбайны</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="feature-grid">
+    <div><h3>Надежные поставки</h3><p>Работаем с B2B-задачами и регулярными потребностями предприятий.</p></div>
+    <div><h3>Подбор под технику</h3><p>Уточняем модель, узел, сезонность и режим эксплуатации.</p></div>
+    <div><h3>TOR Oils</h3><p>Каталог продукции дистрибьютора для техники и производства.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head row-head">
+    <div>
+      <p class="eyebrow">Популярное</p>
+      <h2>Популярные товары</h2>
+    </div>
+    <a class="text-link" href="/catalog">Весь каталог</a>
+  </div>
+  <div class="product-grid">
+    <% featuredProducts.forEach((product) => { %>
+      <%- include('../partials/product-card', { product }) %>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section split dark-band">
+  <div>
+    <p class="eyebrow">О компании</p>
+    <h2>ООО «Примаслоторг»</h2>
+    <p>Поставляем масла и технические жидкости для предприятий Приморского края: от разовых поставок до регулярного снабжения парка техники.</p>
+  </div>
+  <div>
+    <h3>Доставка по Приморскому краю</h3>
+    <p>Сроки, объем и маршрут согласуются с менеджером после подбора продукции и подтверждения условий поставки.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <p class="eyebrow">Подбор</p>
+    <h2>Нужен подбор масла?</h2>
+    <p>Напишите менеджеру, укажите модель техники, узел и условия эксплуатации.</p>
+  </div>
+  <a class="btn" href="<%= site.whatsappUrl %>">Связаться с менеджером</a>
+</section>
+
+<section class="section contacts-preview">
+  <h2>Контакты</h2>
+  <p><a href="<%= site.phoneHref %>"><%= site.phone %></a> · <a href="<%= site.emailHref %>"><%= site.email %></a></p>
+  <p><%= site.address %></p>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<section class="admin-title">
+  <h1><%= title %></h1>
+</section>
+<% if (errors.length) { %>
+  <div class="form-errors"><% errors.forEach((error) => { %><p><%= error %></p><% }) %></div>
+<% } %>
+<form class="admin-form wide" method="post" action="<%= action %>" enctype="multipart/form-data">
+  <label>Название товара <input name="title" value="<%= product.title || '' %>" required></label>
+  <label>Slug <input name="slug" value="<%= product.slug || '' %>" placeholder="сгенерируется из названия"></label>
+  <label>Категория
+    <select name="category_id" required>
+      <option value="">Выберите категорию</option>
+      <% categories.forEach((category) => { %>
+        <option value="<%= category.id %>" <%= Number(product.category_id) === category.id ? 'selected' : '' %>><%= category.title %></option>
+      <% }) %>
+    </select>
+  </label>
+  <label>Краткое описание <textarea name="short_description" rows="3"><%= product.short_description || '' %></textarea></label>
+  <label>Полное описание <textarea name="full_description" rows="7"><%= product.full_description || '' %></textarea></label>
+  <label>Фасовка <input name="packaging" value="<%= product.packaging || '' %>" placeholder="20 л / 205 л"></label>
+  <label>Характеристики <textarea name="specifications" rows="6"><%= product.specifications || '' %></textarea></label>
+  <label>Изображение товара <input type="file" name="image" accept=".jpg,.jpeg,.png,.webp"></label>
+  <% if (product.image) { %><p class="muted">Текущее изображение: <%= product.image %></p><% } %>
+  <label class="checkbox"><input type="checkbox" name="is_featured" <%= product.is_featured ? 'checked' : '' %>> Показывать на главной</label>
+  <div class="form-actions">
+    <button class="btn" type="submit">Сохранить</button>
+    <a class="btn btn-outline" href="/admin/products">Отмена</a>
+  </div>
+</form>
+<%- include('partials/footer') %>

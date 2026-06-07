@@ -1,0 +1,18 @@
+node_modules
+.env
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# база и временные файлы
+*.sqlite
+*.sqlite3
+database.sqlite
+db.sqlite
+data/*.sqlite
+data/*.sqlite3
+
+# загруженные файлы, если не хочешь хранить пользовательские загрузки
+public/uploads/*
+!public/uploads/.gitkeep

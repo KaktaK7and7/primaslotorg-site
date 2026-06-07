@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<section class="product-page">
+  <div class="product-visual">
+    <% if (product.image) { %>
+      <img src="<%= product.image %>" alt="<%= product.title %>">
+    <% } else { %>
+      <div class="placeholder-large"><span>TOR</span><small>изображение товара</small></div>
+    <% } %>
+  </div>
+  <div class="product-info">
+    <p class="eyebrow"><a href="/catalog/<%= product.category_slug %>"><%= product.category_title %></a></p>
+    <h1><%= product.title %></h1>
+    <p class="lead"><%= product.short_description %></p>
+    <div class="info-panel">
+      <div><span>Фасовка</span><b><%= product.packaging || 'уточняется' %></b></div>
+      <div><span>Поставка</span><b>Наличие и условия поставки уточняйте у менеджера.</b></div>
+    </div>
+    <div class="contact-actions">
+      <a class="btn" href="<%= whatsappLink %>">Написать в WhatsApp</a>
+      <a class="btn btn-outline" href="<%= maxLink %>">Написать в MAX</a>
+      <a class="btn btn-outline" href="<%= emailLink %>">Отправить на email</a>
+      <a class="btn btn-outline" href="<%= site.phoneHref %>">Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<section class="section two-columns">
+  <div>
+    <h2>Описание</h2>
+    <p><%= product.full_description %></p>
+  </div>
+  <div>
+    <h2>Характеристики</h2>
+    <p><%= product.specifications %></p>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

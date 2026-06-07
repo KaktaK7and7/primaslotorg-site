@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<section class="admin-title">
+  <h1><%= title %></h1>
+</section>
+<% if (errors.length) { %><div class="form-errors"><% errors.forEach((error) => { %><p><%= error %></p><% }) %></div><% } %>
+<form class="admin-form wide" method="post">
+  <label>Заголовок <input name="title" value="<%= page.title || '' %>" required></label>
+  <label>Slug <input name="slug" value="<%= page.slug || '' %>" required></label>
+  <label>Контент <textarea name="content" rows="12"><%= page.content || '' %></textarea></label>
+  <div class="form-actions">
+    <button class="btn" type="submit">Сохранить</button>
+    <a class="btn btn-outline" href="/admin/pages">Отмена</a>
+  </div>
+</form>
+<%- include('partials/footer') %>

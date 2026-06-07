@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<section class="admin-title">
+  <h1>Текстовые страницы</h1>
+  <p>Редактирование страниц «О компании», «Доставка», «Контакты».</p>
+</section>
+<div class="table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Заголовок</th><th>Slug</th><th></th></tr></thead>
+    <tbody>
+      <% pages.forEach((page) => { %>
+        <tr>
+          <td><%= page.title %></td>
+          <td><%= page.slug %></td>
+          <td class="actions"><a href="/admin/pages/<%= page.id %>/edit">Редактировать</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('partials/footer') %>

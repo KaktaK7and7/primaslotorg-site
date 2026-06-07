@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<section class="page-hero compact">
+  <p class="eyebrow">Каталог TOR Oils</p>
+  <h1><%= currentCategory ? currentCategory.title : 'Каталог продукции' %></h1>
+  <p><%= currentCategory ? currentCategory.description : 'Масла и технические жидкости для спецтехники. Цены не публикуются, условия поставки уточняются у менеджера.' %></p>
+</section>
+
+<section class="catalog-layout">
+  <aside class="catalog-sidebar">
+    <a class="<%= !currentCategory ? 'active' : '' %>" href="/catalog">Все товары</a>
+    <% categories.forEach((category) => { %>
+      <a class="<%= currentCategory && currentCategory.slug === category.slug ? 'active' : '' %>" href="/catalog/<%= category.slug %>"><%= category.title %></a>
+    <% }) %>
+  </aside>
+  <div class="product-grid">
+    <% products.forEach((product) => { %>
+      <%- include('../partials/product-card', { product }) %>
+    <% }) %>
+    <% if (!products.length) { %>
+      <p class="empty">В этой категории пока нет товаров.</p>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

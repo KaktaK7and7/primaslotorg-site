@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> | Админка</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="logo" href="/admin"><span class="logo-mark"></span><span>Админка<br><b>ПМТ</b></span></a>
+      <% if (adminUser) { %>
+        <nav class="main-nav">
+          <a href="/admin/products">Товары</a>
+          <a href="/admin/categories">Категории</a>
+          <a href="/admin/pages">Страницы</a>
+          <a href="/" target="_blank">Сайт</a>
+          <a href="/admin/logout">Выход</a>
+        </nav>
+      <% } %>
+    </header>
+    <main class="admin-main">

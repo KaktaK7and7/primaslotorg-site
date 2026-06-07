@@ -1,0 +1,19 @@
+<article class="product-card">
+  <a class="product-image" href="/product/<%= product.slug %>">
+    <% if (product.image) { %>
+      <img src="<%= product.image %>" alt="<%= product.title %>">
+    <% } else { %>
+      <span class="oil-can">TOR</span>
+    <% } %>
+  </a>
+  <div class="product-body">
+    <p class="eyebrow"><%= product.category_title %></p>
+    <h3><a href="/product/<%= product.slug %>"><%= product.title %></a></h3>
+    <p><%= product.short_description %></p>
+    <div class="meta-row">
+      <span>Фасовка</span>
+      <b><%= product.packaging || 'уточняется' %></b>
+    </div>
+    <a class="text-link" href="/product/<%= product.slug %>">Подробнее</a>
+  </div>
+</article>
