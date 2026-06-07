@@ -3,15 +3,17 @@
   <p class="eyebrow"><%= site.legalName %></p>
   <h1><%= page.title %></h1>
 </section>
-<section class="text-page">
-  <%- html %>
-  <% if (page.slug === 'contacts') { %>
-    <div class="contact-actions">
-      <a class="btn" href="<%= site.whatsappUrl %>">WhatsApp</a>
-      <a class="btn btn-outline" href="<%= site.maxUrl %>">MAX</a>
-      <a class="btn btn-outline" href="<%= site.emailHref %>"><%= site.email %></a>
-      <a class="btn btn-outline" href="<%= site.phoneHref %>"><%= site.phone %></a>
-    </div>
-  <% } %>
+<section class="text-page section-layer">
+  <div class="glass-panel text-panel">
+    <%- html %>
+    <% if (page.slug === 'contacts') { %>
+      <div class="contact-actions">
+        <a class="btn" href="<%= site.whatsappUrl %>">WhatsApp</a>
+        <a class="btn btn-outline" href="<%= site.maxUrl %>">MAX</a>
+        <a class="btn btn-outline" href="<%= site.emailHref %>"><%= site.email %></a>
+        <a class="btn btn-outline" href="<%= site.phoneHref %>"><%= site.phone %></a>
+      </div>
+    <% } %>
+  </div>
 </section>
 <%- include('../partials/footer') %>

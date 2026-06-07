@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<section class="product-page">
+<section class="product-page section-layer">
   <div class="product-visual">
     <% if (product.image) { %>
       <img src="<%= product.image %>" alt="<%= product.title %>">
@@ -25,12 +25,14 @@
   </div>
 </section>
 
-<section class="section two-columns">
-  <div>
+<section class="section two-columns section-layer">
+  <div class="glass-panel">
+    <p class="eyebrow">Описание</p>
     <h2>Описание</h2>
     <p><%= product.full_description %></p>
   </div>
-  <div>
+  <div class="glass-panel">
+    <p class="eyebrow">Технические данные</p>
     <h2>Характеристики</h2>
     <p><%= product.specifications %></p>
   </div>

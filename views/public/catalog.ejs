@@ -1,13 +1,14 @@
 <%- include('../partials/header') %>
 
-<section class="page-hero compact">
+<section class="page-hero compact catalog-hero">
   <p class="eyebrow">Каталог TOR Oils</p>
   <h1><%= currentCategory ? currentCategory.title : 'Каталог продукции' %></h1>
   <p><%= currentCategory ? currentCategory.description : 'Масла и технические жидкости для спецтехники. Цены не публикуются, условия поставки уточняются у менеджера.' %></p>
 </section>
 
-<section class="catalog-layout">
+<section class="catalog-layout section-layer">
   <aside class="catalog-sidebar">
+    <span class="sidebar-title">Категории</span>
     <a class="<%= !currentCategory ? 'active' : '' %>" href="/catalog">Все товары</a>
     <% categories.forEach((category) => { %>
       <a class="<%= currentCategory && currentCategory.slug === category.slug ? 'active' : '' %>" href="/catalog/<%= category.slug %>"><%= category.title %></a>
