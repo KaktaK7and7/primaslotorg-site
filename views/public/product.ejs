@@ -34,7 +34,11 @@
   <div class="glass-panel">
     <p class="eyebrow">Технические данные</p>
     <h2>Характеристики</h2>
-    <p><%= product.specifications %></p>
+    <ul class="spec-list">
+      <% String(product.specifications || '').split(/\r?\n/).filter(Boolean).forEach((item) => { %>
+        <li><%= item %></li>
+      <% }) %>
+    </ul>
   </div>
 </section>
 

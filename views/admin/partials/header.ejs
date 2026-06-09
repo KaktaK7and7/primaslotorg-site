@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %> | Админка</title>
+    <link rel="icon" type="image/svg+xml" href="/images/branding/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/branding/favicon.png">
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body class="admin-body">
     <header class="admin-header">
-      <a class="logo" href="/admin"><span class="logo-mark"></span><span>Админка<br><b>ПМТ</b></span></a>
+      <a class="logo admin-logo" href="/admin" aria-label="Админка Примаслоторг">
+        <img src="/images/branding/logo.svg" alt="Примаслоторг">
+        <span>Админка</span>
+      </a>
       <% if (adminUser) { %>
         <nav class="main-nav">
           <a href="/admin/products">Товары</a>

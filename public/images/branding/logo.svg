@@ -1,0 +1,10 @@
+<svg width="380" height="88" viewBox="0 0 380 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Примаслоторг</title>
+  <rect width="380" height="88" rx="8" fill="#050705"/>
+  <path d="M46 11C59 27 70 40 70 55C70 70 59 80 45 80C31 80 20 70 20 55C20 40 33 27 46 11Z" fill="#5FA51B"/>
+  <path d="M48 25C55 36 60 45 60 55C60 64 54 70 45 70C36 70 30 64 30 55C30 46 39 35 48 25Z" fill="#F7F7F7"/>
+  <text x="88" y="38" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="0">ПРИМ</text>
+  <text x="88" y="68" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="0">
+    <tspan fill="#5FA51B">МАСЛО</tspan><tspan fill="#FFFFFF">ТОРГ</tspan>
+  </text>
+</svg>
