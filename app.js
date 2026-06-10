@@ -3,15 +3,12 @@ const session = require('express-session');
 const path = require('path');
 const fs = require('fs');
 const site = require('./config/site');
-const { initializeDatabase } = require('./db/init');
+const { initDatabase } = require('./scripts/init-db');
 const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-initializeDatabase();
-fs.mkdirSync(path.join(__dirname, 'public', 'uploads'), { recursive: true });
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +42,16 @@ app.use((req, res) => {
   res.status(404).render('public/404', { title: 'Страница не найдена' });
 });
 
-app.listen(PORT, () => {
-  console.log(`PrimMasloTorg site started: http://localhost:${PORT}`);
+async function start() {
+  initDatabase();
+  fs.mkdirSync(path.join(__dirname, 'public', 'uploads'), { recursive: true });
+
+  app.listen(PORT, () => {
+    console.log(`PrimMasloTorg site started on port ${PORT}`);
+  });
+}
+
+start().catch((error) => {
+  console.error('Failed to start app:', error);
+  process.exit(1);
 });

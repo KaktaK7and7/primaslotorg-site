@@ -79,17 +79,7 @@ router.get('/product/:slug', (req, res) => {
 router.get('/about', (req, res) => renderPage(req, res, 'about'));
 router.get('/delivery', (req, res) => renderPage(req, res, 'delivery'));
 router.get('/contacts', (req, res) => renderPage(req, res, 'contacts'));
-
-router.get('/privacy', (req, res) => {
-  res.render('public/page', {
-    title: 'Политика конфиденциальности',
-    page: {
-      title: 'Политика конфиденциальности',
-      content: 'Сайт не принимает онлайн-оплату и не хранит заявки в базе данных. При обращении через внешние каналы связи обработка персональных данных выполняется для ответа на запрос и подготовки коммерческого предложения.'
-    },
-    html: textToHtml('Сайт не принимает онлайн-оплату и не хранит заявки в базе данных.\nПри обращении через внешние каналы связи обработка персональных данных выполняется для ответа на запрос и подготовки коммерческого предложения.')
-  });
-});
+router.get('/privacy', (req, res) => renderPage(req, res, 'privacy'));
 
 function renderPage(req, res, slug) {
   const page = db.prepare('SELECT * FROM pages WHERE slug = ?').get(slug);
