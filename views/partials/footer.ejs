@@ -16,8 +16,10 @@
       </div>
       <div>
         <h3>Контакты</h3>
-        <p><a href="<%= site.phoneHref %>"><%= site.phone %></a></p>
         <p><a href="<%= site.emailHref %>"><%= site.email %></a></p>
+        <% site.phones.forEach((phone, index) => { %>
+          <p><a href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a></p>
+        <% }) %>
         <p><%= site.address %></p>
       </div>
       <div>

@@ -5,14 +5,23 @@
 </section>
 <section class="text-page section-layer">
   <div class="glass-panel text-panel">
-    <%- html %>
     <% if (page.slug === 'contacts') { %>
+      <p><strong>Эл. почта:</strong></p>
+      <p><a href="<%= site.emailHref %>"><%= site.email %></a></p>
+      <p><strong>Телефоны:</strong></p>
+      <% site.phones.forEach((phone, index) => { %>
+        <p><a href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a></p>
+      <% }) %>
+      <p><strong>Адрес:</strong></p>
+      <p><%= site.address %></p>
       <div class="contact-actions">
-        <a class="btn" href="<%= site.whatsappUrl %>">WhatsApp</a>
-        <a class="btn btn-outline" href="<%= site.maxUrl %>">MAX</a>
         <a class="btn btn-outline" href="<%= site.emailHref %>"><%= site.email %></a>
-        <a class="btn btn-outline" href="<%= site.phoneHref %>"><%= site.phone %></a>
+        <% site.phones.forEach((phone, index) => { %>
+          <a class="btn btn-outline" href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a>
+        <% }) %>
       </div>
+    <% } else { %>
+      <%- html %>
     <% } %>
   </div>
 </section>

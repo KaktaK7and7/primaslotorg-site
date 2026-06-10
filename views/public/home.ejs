@@ -27,14 +27,14 @@
     <p class="lead">Поставка моторных, трансмиссионных, гидравлических масел и охлаждающих жидкостей для спецтехники по Приморскому краю.</p>
     <div class="hero-actions">
       <a class="btn" href="/catalog">Смотреть каталог</a>
-      <a class="btn btn-outline" href="<%= site.whatsappUrl %>">Связаться с менеджером</a>
+      <a class="btn btn-outline" href="/contacts">Связаться с менеджером</a>
     </div>
   </div>
   <div class="hero-metrics" aria-label="Преимущества поставки">
     <div class="hero-stat"><strong>TOR Oils</strong><span>дистрибуция</span></div>
     <div class="hero-stat hero-stat--individual"><strong>Индивидуальное</strong><span>обсуждение заказов</span></div>
     <div class="hero-stat"><strong>Доставка</strong><span>по Приморскому краю</span></div>
-    <div class="hero-stat hero-stat--address"><strong>Адрес</strong><span>Приморский край, г. Уссурийск, ул. Московская, 12</span></div>
+    <div class="hero-stat hero-stat--address"><strong>Адрес</strong><span><%= site.address %></span></div>
   </div>
 </section>
 
@@ -126,12 +126,15 @@
     <h2>Нужен подбор масла?</h2>
     <p>Напишите менеджеру, укажите модель техники, узел и условия эксплуатации.</p>
   </div>
-  <a class="btn" href="<%= site.whatsappUrl %>">Связаться с менеджером</a>
+  <a class="btn" href="/contacts">Связаться с менеджером</a>
 </section>
 
 <section class="section contacts-preview section-layer">
   <h2>Контакты</h2>
-  <p><a href="<%= site.phoneHref %>"><%= site.phone %></a> · <a href="<%= site.emailHref %>"><%= site.email %></a></p>
+  <p><a href="<%= site.emailHref %>"><%= site.email %></a></p>
+  <% site.phones.forEach((phone, index) => { %>
+    <p><a href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a></p>
+  <% }) %>
   <p><%= site.address %></p>
 </section>
 

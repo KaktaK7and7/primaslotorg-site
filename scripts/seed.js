@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt');
 const db = require('../db/database');
 const { initializeDatabase } = require('../db/init');
 const { uniqueSlug } = require('../utils/slug');
@@ -143,7 +142,7 @@ for (const product of products) {
 const pages = [
   ['О компании', 'about', 'ООО «Примаслоторг» поставляет масла и технические жидкости для спецтехники по Приморскому краю. Компания ориентирована на B2B-клиентов: строительные, транспортные, сельскохозяйственные и производственные организации.'],
   ['Доставка', 'delivery', 'Организуем поставки по Приморскому краю. Условия, сроки и объем партии согласуются с менеджером после подбора продукции.'],
-  ['Контакты', 'contacts', 'Свяжитесь с менеджером по телефону, email, WhatsApp или MAX. Контактные данные на сайте пока указаны как заглушки и легко меняются в конфиге проекта.']
+  ['Контакты', 'contacts', 'Эл. почта: vvkoil@mail.ru\nТелефоны:\n+7 908 990 89 99\n+7 908 990 98 99\nАдрес:\nПриморский край, г. Уссурийск, ул. Московская, 12']
 ];
 
 for (const [title, slug, content] of pages) {
@@ -155,7 +154,14 @@ for (const [title, slug, content] of pages) {
   }
 }
 
-const passwordHash = bcrypt.hashSync('admin123', 10);
-db.prepare('INSERT OR IGNORE INTO users (username, password_hash) VALUES (?, ?)').run('admin', passwordHash);
+const adminUsername = 'zxfmDarkadmTM';
+const adminPasswordHash = '$2b$10$bCEAktNv45EP6Eq2rov.hO0PcACcuUxBmpuHxJMqCbiodr9uvX3eW';
 
-console.log('Seed completed. Admin: admin / admin123');
+db.prepare('DELETE FROM users WHERE username = ?').run('admin');
+db.prepare(`
+  INSERT INTO users (username, password_hash)
+  VALUES (?, ?)
+  ON CONFLICT(username) DO UPDATE SET password_hash = excluded.password_hash
+`).run(adminUsername, adminPasswordHash);
+
+console.log('Seed completed. Admin user updated.');

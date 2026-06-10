@@ -72,8 +72,6 @@ router.get('/product/:slug', (req, res) => {
   res.render('public/product', {
     title: product.title,
     product,
-    whatsappLink: `${site.whatsappUrl}?text=${encodeURIComponent(message)}`,
-    maxLink: site.maxUrl,
     emailLink: `${site.emailHref}?subject=${encodeURIComponent(product.title)}&body=${encodeURIComponent(message)}`
   });
 });

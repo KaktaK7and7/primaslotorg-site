@@ -17,10 +17,11 @@
       <div><span>Поставка</span><b>Наличие и условия поставки уточняйте у менеджера.</b></div>
     </div>
     <div class="contact-actions">
-      <a class="btn" href="<%= whatsappLink %>">Написать в WhatsApp</a>
-      <a class="btn btn-outline" href="<%= maxLink %>">Написать в MAX</a>
+      <a class="btn" href="/contacts">Связаться с менеджером</a>
       <a class="btn btn-outline" href="<%= emailLink %>">Отправить на email</a>
-      <a class="btn btn-outline" href="<%= site.phoneHref %>">Позвонить</a>
+      <% site.phones.forEach((phone, index) => { %>
+        <a class="btn btn-outline" href="tel:<%= site.phoneLinks[index] %>">Позвонить: <%= phone %></a>
+      <% }) %>
     </div>
   </div>
 </section>
