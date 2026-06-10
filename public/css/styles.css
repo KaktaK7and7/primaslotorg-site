@@ -75,23 +75,12 @@ p { color: var(--gray); }
   backdrop-filter: blur(16px);
 }
 
-.logo,
-.footer-logo {
+.logo {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-weight: 800;
   letter-spacing: 0.5px;
-}
-
-.logo-mark {
-  width: 24px;
-  height: 32px;
-  display: inline-block;
-  background: linear-gradient(145deg, #8bd33b, var(--green-dark));
-  border-radius: 55% 55% 55% 12%;
-  transform: rotate(35deg);
-  box-shadow: 0 0 22px rgba(95, 165, 27, 0.7), inset 0 1px 8px rgba(255,255,255,0.28);
 }
 
 .main-nav {
@@ -1103,70 +1092,7 @@ textarea { resize: vertical; }
   }
 }
 
-/* Targeted refinements: logo, hero metrics, page backgrounds and larger machine images */
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.logo .logo-mark {
-  width: 42px;
-  height: 52px;
-  position: relative;
-  display: inline-block;
-  flex: 0 0 auto;
-  background: none;
-  border-radius: 0;
-  transform: none;
-  box-shadow: none;
-  filter: drop-shadow(0 0 14px rgba(95, 165, 27, 0.35));
-}
-
-.logo .logo-mark::before {
-  content: "";
-  position: absolute;
-  inset: 5px 9px;
-  background: linear-gradient(135deg, #5fa51b, #2f6f0d);
-  border-radius: 60% 45% 60% 45%;
-  transform: rotate(35deg);
-  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.16);
-}
-
-.logo .logo-mark::after {
-  content: "";
-  position: absolute;
-  inset: 2px 14px 10px 13px;
-  background: #fff;
-  border-radius: 60% 45% 60% 45%;
-  transform: rotate(35deg);
-  opacity: 0.95;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 0.9;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.logo-line-main {
-  color: #fff;
-  font-size: 26px;
-}
-
-.logo-line-sub {
-  margin-top: 4px;
-  font-size: 17px;
-  white-space: nowrap;
-}
-
-.logo-green { color: #5fa51b; }
-.logo-white { color: #fff; }
-
+/* Targeted refinements: hero metrics, page backgrounds and larger machine images */
 .hero-metrics {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1518,22 +1444,77 @@ textarea { resize: vertical; }
 
 /* Current branding and interaction states */
 .brand-logo {
-  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #fff;
+  flex-shrink: 0;
   min-width: 0;
 }
 
-.brand-logo img {
-  width: clamp(174px, 18vw, 238px);
-  height: auto;
+.brand-logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 62px;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 16px rgba(95, 165, 27, 0.42));
+}
+
+.brand-logo__mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
-.footer-logo.brand-logo {
-  margin-bottom: 14px;
+.brand-logo__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 122px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.86;
 }
 
-.footer-logo.brand-logo img {
-  width: clamp(180px, 20vw, 246px);
+.brand-logo__top {
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  transform: scaleX(1.18);
+  transform-origin: left center;
+}
+
+.brand-logo__bottom {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 19px;
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.brand-logo__green {
+  color: #5fa51b;
+}
+
+.brand-logo__white {
+  color: #ffffff;
+}
+
+.brand-logo--footer {
+  margin-bottom: 14px;
 }
 
 .admin-logo {
@@ -1541,7 +1522,9 @@ textarea { resize: vertical; }
 }
 
 .admin-logo img {
-  width: clamp(152px, 16vw, 210px);
+  width: 54px;
+  height: 62px;
+  object-fit: contain;
 }
 
 .admin-logo span {
@@ -1622,10 +1605,26 @@ textarea { resize: vertical; }
   color: var(--green);
 }
 
-@media (max-width: 680px) {
-  .brand-logo img,
-  .footer-logo.brand-logo img {
-    width: 188px;
+@media (max-width: 700px) {
+  .brand-logo__mark {
+    width: 46px;
+    height: 54px;
+  }
+
+  .brand-logo__text {
+    width: 92px;
+  }
+
+  .brand-logo__top {
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    transform: scaleX(1.18);
+  }
+
+  .brand-logo__bottom {
+    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: -0.055em;
   }
 
   .admin-logo {

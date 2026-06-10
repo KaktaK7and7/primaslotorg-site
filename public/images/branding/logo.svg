@@ -1,10 +1,23 @@
-<svg width="380" height="88" viewBox="0 0 380 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
-  <title id="title">Примаслоторг</title>
-  <rect width="380" height="88" rx="8" fill="#050705"/>
-  <path d="M46 11C59 27 70 40 70 55C70 70 59 80 45 80C31 80 20 70 20 55C20 40 33 27 46 11Z" fill="#5FA51B"/>
-  <path d="M48 25C55 36 60 45 60 55C60 64 54 70 45 70C36 70 30 64 30 55C30 46 39 35 48 25Z" fill="#F7F7F7"/>
-  <text x="88" y="38" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="0">ПРИМ</text>
-  <text x="88" y="68" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="0">
-    <tspan fill="#5FA51B">МАСЛО</tspan><tspan fill="#FFFFFF">ТОРГ</tspan>
-  </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#4B710A}
+    .fil0 {fill:#FCFCFC}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2632164098992">
+   <path class="fil0" d="M6929.8 11636.49c216.18,58.54 370.62,50.82 539.81,-95.2 135.6,-117.03 239.33,-301.55 220.2,-490.13 -16.23,-160.07 -152.72,-327.06 -249.18,-451.92l-299.65 -412.58c-100.98,159.9 -97.22,297.07 13.65,444.9 70.27,93.7 198.92,246.42 243.83,349.26 76.77,175.79 -1.86,294.96 -105.74,425.92 -57.71,72.74 -160.26,153.58 -250.65,189.1 -18.81,7.4 -37.6,14.35 -57.38,19.43 -31.2,8.02 -35.43,3.1 -54.89,21.22z"/>
+   <path class="fil1" d="M7048.39 10621.51c-26.8,-62.89 -55.16,-72.06 -62.79,-154.57 -7.93,-85.74 4.72,-117.64 20.28,-197.41 -43.96,27.72 -244.03,309.61 -297.15,374.87 -41.43,50.89 -103.38,141.73 -137.66,200.99 -143.46,247.98 -15.78,556.42 188.9,697.59 101.56,70.05 375.28,-33.3 445.06,-188.72 -125.85,32.88 -178.85,50.8 -298.02,-26.53 -81.46,-52.86 -132.65,-136.52 -130.19,-242.54 2.59,-111.53 52,-175.34 115.32,-257.27 32.34,-41.84 126.79,-183.06 156.25,-206.41z"/>
+  </g>
+ </g>
 </svg>
