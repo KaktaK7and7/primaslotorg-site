@@ -5,7 +5,7 @@
     <% if (product.image) { %>
       <img src="<%= product.image %>" alt="<%= product.title %>">
     <% } else { %>
-      <div class="placeholder-large"><span>TOR</span><small>изображение товара</small></div>
+      <div class="placeholder-large"><span><%= settings.supplier.brand_name %></span><small>изображение товара</small></div>
     <% } %>
   </div>
   <div class="product-info">
@@ -19,8 +19,8 @@
     <div class="contact-actions">
       <a class="btn" href="/contacts">Связаться с менеджером</a>
       <a class="btn btn-outline" href="<%= emailLink %>">Отправить на email</a>
-      <% site.phones.forEach((phone, index) => { %>
-        <a class="btn btn-outline" href="tel:<%= site.phoneLinks[index] %>">Позвонить: <%= phone %></a>
+      <% contactPhones.forEach((phone) => { %>
+        <a class="btn btn-outline" href="tel:<%= phoneHref(phone) %>">Позвонить: <%= phone %></a>
       <% }) %>
     </div>
   </div>

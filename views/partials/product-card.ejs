@@ -3,7 +3,7 @@
     <% if (product.image) { %>
       <img src="<%= product.image %>" alt="<%= product.title %>">
     <% } else { %>
-      <span class="oil-can">TOR</span>
+      <span class="oil-can"><%= settings.supplier.brand_name %></span>
     <% } %>
   </a>
   <div class="product-body">

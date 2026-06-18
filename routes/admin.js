@@ -4,6 +4,7 @@ const db = require('../db/database');
 const { requireAdmin } = require('../middleware/auth');
 const upload = require('../middleware/upload');
 const { makeSlug, uniqueSlug } = require('../utils/slug');
+const { DEFAULT_SETTINGS, SETTING_GROUPS, getSettingsRows, updateSettings } = require('../utils/settings');
 
 const router = express.Router();
 
@@ -52,9 +53,24 @@ router.get('/', (req, res) => {
   const counts = {
     products: db.prepare('SELECT COUNT(*) AS count FROM products').get().count,
     categories: db.prepare('SELECT COUNT(*) AS count FROM categories').get().count,
-    pages: db.prepare('SELECT COUNT(*) AS count FROM pages').get().count
+    pages: db.prepare('SELECT COUNT(*) AS count FROM pages').get().count,
+    settings: DEFAULT_SETTINGS.length
   };
   res.render('admin/dashboard', { title: 'Панель управления', counts });
+});
+
+router.get('/settings', (req, res) => {
+  res.render('admin/settings', {
+    title: 'Настройки сайта',
+    groups: SETTING_GROUPS,
+    settingsRows: getSettingsRows(),
+    saved: req.query.saved === '1'
+  });
+});
+
+router.post('/settings', (req, res) => {
+  updateSettings(req.body);
+  res.redirect('/admin/settings?saved=1');
 });
 
 router.get('/products', (req, res) => {

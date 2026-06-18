@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const site = require('./config/site');
 const { initDatabase } = require('./scripts/init-db');
+const { getSettingsObject, phoneHref } = require('./utils/settings');
 const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
 
@@ -29,7 +30,15 @@ app.use(
 );
 
 app.use((req, res, next) => {
+  const settings = getSettingsObject();
   res.locals.site = site;
+  res.locals.settings = settings;
+  res.locals.phoneHref = phoneHref;
+  res.locals.emailHref = (email) => `mailto:${email || ''}`;
+  res.locals.contactPhones = [
+    settings.contacts?.phone_1,
+    settings.contacts?.phone_2
+  ].filter(Boolean);
   res.locals.currentPath = req.path;
   res.locals.adminUser = req.session.user || null;
   next();

@@ -1,6 +1,6 @@
 const express = require('express');
 const db = require('../db/database');
-const site = require('../config/site');
+const { getSettingsObject } = require('../utils/settings');
 
 const router = express.Router();
 
@@ -68,11 +68,12 @@ router.get('/product/:slug', (req, res) => {
     .get(req.params.slug);
   if (!product) return res.status(404).render('public/404', { title: 'Товар не найден' });
 
+  const settings = getSettingsObject();
   const message = `Здравствуйте! Интересует товар: ${product.title}. Подскажите наличие и условия поставки.`;
   res.render('public/product', {
     title: product.title,
     product,
-    emailLink: `${site.emailHref}?subject=${encodeURIComponent(product.title)}&body=${encodeURIComponent(message)}`
+    emailLink: `mailto:${settings.contacts.email}?subject=${encodeURIComponent(product.title)}&body=${encodeURIComponent(message)}`
   });
 });
 

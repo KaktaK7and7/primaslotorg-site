@@ -7,17 +7,17 @@
   <div class="glass-panel text-panel">
     <% if (page.slug === 'contacts') { %>
       <p><strong>Эл. почта:</strong></p>
-      <p><a href="<%= site.emailHref %>"><%= site.email %></a></p>
+      <p><a href="<%= emailHref(settings.contacts.email) %>"><%= settings.contacts.email %></a></p>
       <p><strong>Телефоны:</strong></p>
-      <% site.phones.forEach((phone, index) => { %>
-        <p><a href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a></p>
+      <% contactPhones.forEach((phone) => { %>
+        <p><a href="tel:<%= phoneHref(phone) %>"><%= phone %></a></p>
       <% }) %>
       <p><strong>Адрес:</strong></p>
-      <p><%= site.address %></p>
+      <p><%= settings.contacts.address %></p>
       <div class="contact-actions">
-        <a class="btn btn-outline" href="<%= site.emailHref %>"><%= site.email %></a>
-        <% site.phones.forEach((phone, index) => { %>
-          <a class="btn btn-outline" href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a>
+        <a class="btn btn-outline" href="<%= emailHref(settings.contacts.email) %>"><%= settings.contacts.email %></a>
+        <% contactPhones.forEach((phone) => { %>
+          <a class="btn btn-outline" href="tel:<%= phoneHref(phone) %>"><%= phone %></a>
         <% }) %>
       </div>
     <% } else { %>

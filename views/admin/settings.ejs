@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+<section class="admin-title">
+  <h1>Настройки сайта</h1>
+  <p>Контакты, тексты главной страницы, поставщик и общие тексты сайта.</p>
+</section>
+
+<% if (saved) { %>
+  <div class="form-success">Настройки сохранены.</div>
+<% } %>
+
+<form class="admin-form wide settings-form" method="post">
+  <% groups.forEach((group) => { %>
+    <fieldset class="settings-group">
+      <legend><%= group.title %></legend>
+      <% settingsRows.filter((setting) => setting.group_name === group.key).forEach((setting) => { %>
+        <label>
+          <%= setting.label %>
+          <% if (setting.type === 'textarea') { %>
+            <textarea name="<%= setting.key %>" rows="4"><%= setting.value || '' %></textarea>
+          <% } else { %>
+            <input name="<%= setting.key %>" value="<%= setting.value || '' %>">
+          <% } %>
+        </label>
+      <% }) %>
+    </fieldset>
+  <% }) %>
+  <div class="form-actions">
+    <button class="btn" type="submit">Сохранить</button>
+    <a class="btn btn-outline" href="/admin">Отмена</a>
+  </div>
+</form>
+<%- include('partials/footer') %>

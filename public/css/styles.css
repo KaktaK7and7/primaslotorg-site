@@ -783,6 +783,28 @@ textarea { resize: vertical; }
   background: rgba(150, 40, 20, 0.18);
   color: #ffd8cf;
 }
+.form-success {
+  max-width: 920px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(139, 211, 59, 0.55);
+  border-radius: 8px;
+  background: rgba(95, 165, 27, 0.14);
+  color: #d9ffc1;
+}
+.settings-form { gap: 20px; }
+.settings-group {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.settings-group legend {
+  padding: 0 8px;
+  color: var(--green);
+  font-weight: 800;
+}
 .table-wrap { overflow-x: auto; }
 .admin-table { width: 100%; border-collapse: collapse; min-width: 720px; }
 .admin-table th,

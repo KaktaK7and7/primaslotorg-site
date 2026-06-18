@@ -12,15 +12,15 @@
             </span>
           </span>
         </a>
-        <p>Масла и технические жидкости для спецтехники по Приморскому краю.</p>
+        <p><%= settings.site.footer_description %></p>
       </div>
       <div>
         <h3>Контакты</h3>
-        <p><a href="<%= site.emailHref %>"><%= site.email %></a></p>
-        <% site.phones.forEach((phone, index) => { %>
-          <p><a href="tel:<%= site.phoneLinks[index] %>"><%= phone %></a></p>
+        <p><a href="<%= emailHref(settings.contacts.email) %>"><%= settings.contacts.email %></a></p>
+        <% contactPhones.forEach((phone) => { %>
+          <p><a href="tel:<%= phoneHref(phone) %>"><%= phone %></a></p>
         <% }) %>
-        <p><%= site.address %></p>
+        <p><%= settings.contacts.address %></p>
       </div>
       <div>
         <h3>Разделы</h3>

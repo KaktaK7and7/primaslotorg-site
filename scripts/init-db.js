@@ -1,6 +1,7 @@
 const db = require('../db/database');
 const { initializeDatabase } = require('../db/init');
 const { uniqueSlug } = require('../utils/slug');
+const { ensureDefaultSettings } = require('../utils/settings');
 
 const adminUsername = 'zxfmDarkadmTM';
 const adminPasswordHash = '$2b$10$bCEAktNv45EP6Eq2rov.hO0PcACcuUxBmpuHxJMqCbiodr9uvX3eW';
@@ -98,7 +99,7 @@ const products = [
 const pages = [
   ['О компании', 'about', 'ООО «Примаслоторг» поставляет масла и технические жидкости для спецтехники по Приморскому краю. Компания ориентирована на B2B-клиентов: строительные, транспортные, сельскохозяйственные и производственные организации.'],
   ['Доставка', 'delivery', 'Организуем поставки по Приморскому краю. Условия, сроки и объем партии согласуются с менеджером после подбора продукции.'],
-  ['Контакты', 'contacts', 'Эл. почта: vvkoil@mail.ru\nТелефоны:\n+7 908 990 89 99\n+7 908 990 98 99\nАдрес:\nПриморский край, г. Уссурийск, ул. Московская, 12'],
+  ['Контакты', 'contacts', 'Контактная информация редактируется в разделе «Настройки сайта».'],
   ['Политика конфиденциальности', 'privacy', 'Сайт не принимает онлайн-оплату и не хранит заявки в базе данных.\nПри обращении через внешние каналы связи обработка персональных данных выполняется для ответа на запрос и подготовки коммерческого предложения.']
 ];
 
@@ -172,6 +173,7 @@ function initDatabase() {
   const categoryIds = ensureCategories();
   ensureProducts(categoryIds);
   ensurePages();
+  ensureDefaultSettings();
   ensureAdmin();
 }
 

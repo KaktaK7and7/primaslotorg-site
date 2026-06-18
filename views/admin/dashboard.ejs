@@ -1,11 +1,12 @@
 <%- include('partials/header') %>
 <section class="admin-title">
   <h1>Панель управления</h1>
-  <p>Управление каталогом, категориями и текстовыми страницами.</p>
+  <p>Управление каталогом, категориями, текстовыми страницами и настройками сайта.</p>
 </section>
 <div class="admin-grid">
   <a class="admin-card" href="/admin/products"><b><%= counts.products %></b><span>Товары</span></a>
   <a class="admin-card" href="/admin/categories"><b><%= counts.categories %></b><span>Категории</span></a>
   <a class="admin-card" href="/admin/pages"><b><%= counts.pages %></b><span>Страницы</span></a>
+  <a class="admin-card" href="/admin/settings"><b><%= counts.settings %></b><span>Настройки сайта</span></a>
 </div>
 <%- include('partials/footer') %>

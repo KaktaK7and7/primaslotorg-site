@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <section class="page-hero compact page-hero--catalog">
-  <p class="eyebrow">Каталог TOR Oils</p>
+  <p class="eyebrow">Каталог <%= settings.supplier.brand_name %></p>
   <h1><%= currentCategory ? currentCategory.title : 'Каталог продукции' %></h1>
   <p><%= currentCategory ? currentCategory.description : 'Масла и технические жидкости для спецтехники. Цены не публикуются, условия поставки уточняются у менеджера.' %></p>
 </section>
