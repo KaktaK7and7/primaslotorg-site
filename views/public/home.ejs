@@ -45,13 +45,16 @@
   </div>
   <div class="category-grid">
     <% categories.forEach((category) => { %>
+      <% const categoryImage = categoryImages[category.slug] || '/images/categories/technical-fluids.png'; %>
       <a
         class="category-card category-card-visual"
         href="/catalog/<%= category.slug %>"
-        style="--category-image: url('<%= categoryImages[category.slug] || '/images/categories/technical-fluids.png' %>')"
+        style="--category-image: url('<%= categoryImage %>')"
       >
         <span class="card-index">0<%= category.id %></span>
-        <div class="category-art" aria-hidden="true"></div>
+        <div class="category-art" aria-hidden="true">
+          <img src="<%= categoryImage %>" alt="">
+        </div>
         <div class="category-card__content">
           <h3><%= category.title %></h3>
           <p><%= category.description %></p>

@@ -418,6 +418,10 @@ h3 { margin: 0 0 10px; }
   filter: drop-shadow(0 20px 28px rgba(0,0,0,0.45));
 }
 
+.category-art img {
+  display: none;
+}
+
 .category-art::after,
 .machine-art::after {
   content: "";
@@ -1652,5 +1656,109 @@ textarea { resize: vertical; }
   .admin-logo {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+/* Mobile visual cards */
+@media (max-width: 700px) {
+  .category-card-visual {
+    min-height: 280px;
+    padding: 24px;
+  }
+
+  .category-card-visual::before {
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(3, 7, 3, 0.32) 0%, rgba(3, 7, 3, 0.78) 100%),
+      linear-gradient(135deg, rgba(3, 7, 3, 0.88) 0%, rgba(3, 7, 3, 0.32) 58%, rgba(95, 165, 27, 0.38) 100%);
+  }
+
+  .category-art {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.72;
+    filter: none;
+    z-index: 0;
+  }
+
+  .category-art img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .category-art::after {
+    display: none;
+  }
+
+  .category-card__content,
+  .category-card-visual h3,
+  .category-card-visual p,
+  .category-card-visual .card-index {
+    position: relative;
+    z-index: 2;
+  }
+
+  .category-card__content,
+  .category-card h3,
+  .category-card__title {
+    max-width: 100%;
+  }
+
+  .category-card p,
+  .category-card__text {
+    color: rgba(255, 255, 255, 0.84);
+  }
+}
+
+@media (max-width: 680px) {
+  .machine-card {
+    text-align: center;
+  }
+
+  .machine-card__image,
+  .machine-card--dump .machine-card__image,
+  .machine-card--excavator .machine-card__image,
+  .machine-card--tractor .machine-card__image,
+  .machine-card--combine .machine-card__image,
+  .machine-card--bulldozer .machine-card__image,
+  .machine-card--crane .machine-card__image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 340px;
+    height: clamp(190px, 54vw, 245px);
+    margin: 0 auto 18px;
+    transform: none;
+  }
+
+  .machine-card__image img,
+  .machine-card--dump .machine-card__image img,
+  .machine-card--excavator .machine-card__image img,
+  .machine-card--tractor .machine-card__image img,
+  .machine-card--combine .machine-card__image img,
+  .machine-card--bulldozer .machine-card__image img,
+  .machine-card--crane .machine-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+  }
+
+  .machine-card__content {
+    max-width: 100%;
+    padding-top: 0;
+    text-align: left;
   }
 }
